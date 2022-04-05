@@ -4,23 +4,32 @@
 {% with messages = get_flashed_messages(with_categories=true) %}
 
 {% if messages %}
-<p>{{messages[0][1]}}</p>
+    <p>{{messages[0][1]}}</p>
 {% endif %}
-
 {% endwith %}
-
 {% endblock message %}
 
 {% block contents %}
+<link href="{{url_for('static', filename='css/register.css')}}" rel="stylesheet">
+<div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+</div>
 <form action="{{url_for("register_done")}}" method="get">
-    <p>Email : </p>
-    <input type="email" name="email" id="email">
-    <p>ID : </p>
-    <input type="text" name="id" id="id">
-    <p>Password : </p>
-    <input type="password" name="pwd" id="pwd">
-    <p>Name : </p>
-    <input type="text" name="name" id="name">
+    <h3>REGISTER</h3>
+
+    <label for="email">Email</label>
+    <input type="email" placeholder="Email..." name="email" id="email" />
+
+    <label for="id">ID</label>
+    <input type="text" placeholder="ID..."  name="id" id="id">
+
+    <label for="password">Password</label>
+    <input type="password" placeholder="Password..." name="pwd" id="pwd">
+
+    <label for="username">Username</label>
+    <input type="text" placeholder="Username..." name="name" id="name">
+
     <button type="submit">REGISTER</button>
 </form>
 

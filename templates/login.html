@@ -4,20 +4,27 @@
 {% with messages = get_flashed_messages(with_categories=true) %}
 
 {% if messages %}
-<p>{{messages[0][1]}}</p>
+    <p>{{messages[0][1]}}</p>
 {% endif %}
-
 {% endwith %}
-
 {% endblock message %}
 
 {% block contents %}
+<link href="{{ url_for('static', filename='css/login.css') }}" rel="stylesheet">
+<div class="background">
+    <div class="shape"></div>
+    <div class="shape"></div>
+</div>
 <form action="{{url_for("login_done")}}" method="get">
-    <p>ID : </p>
-    <input type="text" name="id" id="id">
-    <p>Password : </p>
-    <input type="password" name="pwd" id="pwd">
+    <h3>LOGIN</h3>
+    
+    <label for="id">ID</label>
+    <input type="text" placeholder="Username..." name="id" id="id">
+    <label for="password">Password</label>
+    <input type="password" placeholder="Password..." name="pwd" id="pwd">
+
     <button type="submit">LOGIN</button>
+    <p style="position: absolute; left: 60px; top: 450px;">Don’t have an account? <a href="/register" style="text-decoration : none;">REGISTER</a></p>
 </form>
 
 {% endblock contents %}

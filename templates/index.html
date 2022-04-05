@@ -2,14 +2,63 @@
 
 {% block user %}
 
+
 {% if user=="Login" %}
-<a href = "{{url_for('login')}}">Login</a>
+<a href="{{url_for('login')}}">
+<i class='bx bx-log-in icon' ></i>
+<span class="text nav-text">Login</span>
 {% else %}
-<p>{{user}}</p>
+<p style="position: absolute; top: 700px;">user: {{user}}</p>
+<a href="{{url_for('logout')}}">
+<i class='bx bx-log-out icon'></i>
 <a href = "{{url_for('logout')}}">Logout</a>
 {% endif %}
 {% endblock user %}
 
 {% block contents %}
+<section class="home">
+    <div class="text">
+        <h1 style="top: 190px;">TANA INFINITY</h1>
+        <h4 style="top: 260px;">Find and sell <span style="color:#06D6A0">NFT</span> with great features</h4>
+        <h6 style="top: 310px;">TANA INFINITY has safe <br> transaction and various design</h6>
+        </div>
+        <div id="workarea">
+            <div class="position">
+                <!-- Design Button -->
+                <div class="svg-wrapper" style="position: absolute; height: 40; width: 150; top: 370px; left: 26px;">
+                    <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                        <rect id="shape" height="40" width="150"/>
+                        <div id="text">
+                            <a href="#">
+                                <span class="spot"></span>
+                                DESIGN
+                            </a>
+                        </div>
+                    </svg>
+                </div>
+                <!-- Contact Button -->
+                <div class="svg-wrapper" style="position: absolute; height: 40; width: 150; top: 370px; left: 190px;">
+                    <svg height="40" width="150" xmlns="http://www.w3.org/2000/svg">
+                        <rect id="shape" height="40" width="150"/>
+                        <div id="text">
+                            <a href="#">
+                                <span class="spot"></span>
+                                Contact
+                            </a>
+                        </div>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class="banner-image">
+            <div class="banner-box">
+                <img src="../static/img/banner.gif">
+                <div class="banner-footer">
+                    <span class="author">NFT Design By [xxxxxx]</author>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 {% endblock contents %}

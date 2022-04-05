@@ -42,7 +42,7 @@ def register_done():
     pwd = request.args.get("pwd")
     name = request.args.get("name")
     if DB.register(email = email, _id_ = uid, pwd = pwd, name = name):
-        return redirect(url_for("index"))
+        return redirect(url_for("login"))
     else:
         flash("이미 존재하는 아이디 입니다.")
         return redirect(url_for("register"))
