@@ -1,5 +1,16 @@
 {% extends "base.html" %}
 
+{% block message %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+
+{% if messages %}
+<p>{{messages[0][1]}}</p>
+{% endif %}
+
+{% endwith %}
+
+{% endblock message %}
+
 {% block contents %}
 <form action="{{url_for("register_done")}}" method="get">
     <p>Email : </p>
