@@ -8,10 +8,13 @@
 <i class='bx bx-log-in icon' ></i>
 <span class="text nav-text">Login</span>
 {% else %}
-<p style="position: absolute; top: 700px;">user: {{user}}</p>
-<a href="{{url_for('logout')}}">
+
+<i class='bx bxs-user-badge icon' style="position: absolute; top: 278px"></i>
+<span class="text nav-text" style="position: absolute; top: 700px; left: 72px">User: {{user}}</span>
+
+<a href = "{{url_for('logout')}}">
 <i class='bx bx-log-out icon'></i>
-<a href = "{{url_for('logout')}}">Logout</a>
+<span class="text nav-text">Logout</span>
 {% endif %}
 {% endblock user %}
 
