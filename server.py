@@ -1,4 +1,3 @@
-import re
 from flask import Flask, redirect, render_template, url_for, request, flash, session
 from DB_handler import DBModule
 
